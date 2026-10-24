@@ -1,0 +1,302 @@
+{
+  "add": [
+    {
+      "name": "@humanfs/types",
+      "version": "0.15.0",
+      "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\types"
+    },
+    {
+      "name": "baseline-browser-mapping",
+      "version": "2.11.32",
+      "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\baseline-browser-mapping"
+    }
+  ],
+  "added": 2,
+  "audited": 485,
+  "change": [
+    {
+      "from": {
+        "name": "yaml",
+        "version": "2.6.0",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\yaml"
+      },
+      "to": {
+        "name": "yaml",
+        "version": "2.9.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\yaml"
+      }
+    },
+    {
+      "from": {
+        "name": "update-browserslist-db",
+        "version": "1.1.3",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\update-browserslist-db"
+      },
+      "to": {
+        "name": "update-browserslist-db",
+        "version": "1.3.4",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\update-browserslist-db"
+      }
+    },
+    {
+      "from": {
+        "name": "undici",
+        "version": "7.22.0",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\undici"
+      },
+      "to": {
+        "name": "undici",
+        "version": "7.30.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\undici"
+      }
+    },
+    {
+      "from": {
+        "name": "picomatch",
+        "version": "2.3.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\picomatch"
+      },
+      "to": {
+        "name": "picomatch",
+        "version": "2.3.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\picomatch"
+      }
+    },
+    {
+      "from": {
+        "name": "node-releases",
+        "version": "2.0.19",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\node-releases"
+      },
+      "to": {
+        "name": "node-releases",
+        "version": "2.0.60",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\node-releases"
+      }
+    },
+    {
+      "from": {
+        "name": "minimatch",
+        "version": "3.1.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\minimatch"
+      },
+      "to": {
+        "name": "minimatch",
+        "version": "3.1.5",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\minimatch"
+      }
+    },
+    {
+      "from": {
+        "name": "lodash",
+        "version": "4.17.21",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\lodash"
+      },
+      "to": {
+        "name": "lodash",
+        "version": "4.18.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\lodash"
+      }
+    },
+    {
+      "from": {
+        "name": "js-yaml",
+        "version": "4.1.0",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\js-yaml"
+      },
+      "to": {
+        "name": "js-yaml",
+        "version": "4.3.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\js-yaml"
+      }
+    },
+    {
+      "from": {
+        "name": "glob",
+        "version": "10.4.5",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob"
+      },
+      "to": {
+        "name": "glob",
+        "version": "10.5.0",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob"
+      }
+    },
+    {
+      "from": {
+        "name": "minimatch",
+        "version": "9.0.5",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob\\node_modules\\minimatch"
+      },
+      "to": {
+        "name": "minimatch",
+        "version": "9.0.9",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob\\node_modules\\minimatch"
+      }
+    },
+    {
+      "from": {
+        "name": "brace-expansion",
+        "version": "2.0.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob\\node_modules\\brace-expansion"
+      },
+      "to": {
+        "name": "brace-expansion",
+        "version": "2.1.7",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\glob\\node_modules\\brace-expansion"
+      }
+    },
+    {
+      "from": {
+        "name": "flatted",
+        "version": "3.3.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\flatted"
+      },
+      "to": {
+        "name": "flatted",
+        "version": "3.4.4",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\flatted"
+      }
+    },
+    {
+      "from": {
+        "name": "electron-to-chromium",
+        "version": "1.5.192",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\electron-to-chromium"
+      },
+      "to": {
+        "name": "electron-to-chromium",
+        "version": "1.5.464",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\electron-to-chromium"
+      }
+    },
+    {
+      "from": {
+        "name": "caniuse-lite",
+        "version": "1.0.30001727",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\caniuse-lite"
+      },
+      "to": {
+        "name": "caniuse-lite",
+        "version": "1.0.30001819",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\caniuse-lite"
+      }
+    },
+    {
+      "from": {
+        "name": "browserslist",
+        "version": "4.25.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\browserslist"
+      },
+      "to": {
+        "name": "browserslist",
+        "version": "4.29.4",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\browserslist"
+      }
+    },
+    {
+      "from": {
+        "name": "brace-expansion",
+        "version": "1.1.12",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\brace-expansion"
+      },
+      "to": {
+        "name": "brace-expansion",
+        "version": "1.1.21",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\brace-expansion"
+      }
+    },
+    {
+      "from": {
+        "name": "ajv",
+        "version": "6.12.6",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\ajv"
+      },
+      "to": {
+        "name": "ajv",
+        "version": "6.15.0",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\ajv"
+      }
+    },
+    {
+      "from": {
+        "name": "minimatch",
+        "version": "9.0.5",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\minimatch"
+      },
+      "to": {
+        "name": "minimatch",
+        "version": "9.0.9",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\minimatch"
+      }
+    },
+    {
+      "from": {
+        "name": "brace-expansion",
+        "version": "2.0.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\brace-expansion"
+      },
+      "to": {
+        "name": "brace-expansion",
+        "version": "2.1.7",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\brace-expansion"
+      }
+    },
+    {
+      "from": {
+        "name": "@humanfs/node",
+        "version": "0.16.6",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\node"
+      },
+      "to": {
+        "name": "@humanfs/node",
+        "version": "0.16.8",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\node"
+      }
+    },
+    {
+      "from": {
+        "name": "@humanfs/core",
+        "version": "0.19.1",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\core"
+      },
+      "to": {
+        "name": "@humanfs/core",
+        "version": "0.19.2",
+        "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\core"
+      }
+    }
+  ],
+  "changed": 21,
+  "funding": 100,
+  "remove": [
+    {
+      "name": "@humanwhocodes/retry",
+      "version": "0.3.1",
+      "path": "C:\\Users\\elior\\Desktop\\yossiuzan-website\\node_modules\\@humanfs\\node\\node_modules\\@humanwhocodes\\retry"
+    }
+  ],
+  "removed": 1,
+  "audit": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {},
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 262,
+        "dev": 222,
+        "optional": 6,
+        "peer": 10,
+        "peerOptional": 0,
+        "total": 484
+      }
+    }
+  }
+}

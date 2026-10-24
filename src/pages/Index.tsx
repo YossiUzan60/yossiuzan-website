@@ -7,12 +7,10 @@ import { FAQ } from '@/components/FAQ';
 import { Testimonials } from '@/components/Testimonials';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
-import { AccessibilityWidget } from '@/components/AccessibilityWidget';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <AccessibilityWidget />
       <Header />
       <main id="main-content">
         <Hero />

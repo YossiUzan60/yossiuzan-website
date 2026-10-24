@@ -7,6 +7,10 @@ import Index from "./pages/Index";
 import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 import { AccessibilityWidget } from "@/components/AccessibilityWidget";
+import { ScrollToLocation } from "@/components/ScrollToLocation";
+import { CookieConsent } from "@/components/CookieConsent";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { LegalPage } from "./pages/LegalPage";
 
 const queryClient = new QueryClient();
 
@@ -17,9 +21,15 @@ const App = () => (
       <Sonner />
       <AccessibilityWidget />
       <BrowserRouter>
+        <ScrollToLocation />
+        <CookieConsent />
+        <WhatsAppButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/regulations" element={<LegalPage kind="regulations" />} />
+          <Route path="/privacy-policy" element={<LegalPage kind="privacy-policy" />} />
+          <Route path="/accessibility" element={<LegalPage kind="accessibility" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

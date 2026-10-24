@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 
 const footerLinks = {
@@ -32,7 +33,7 @@ const socialLinks = [
 
 export const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer ref={ref} className="bg-navy-dark border-t border-navy-medium">
+    <footer ref={ref} className="bg-navy-dark border-t border-navy-medium pb-24">
       <div className="container mx-auto px-4">
         {/* Main Footer */}
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -75,12 +76,12 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={`/${link.href}`}
                     className="text-primary-foreground/70 hover:text-gold transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -92,12 +93,12 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
             <ul className="space-y-3">
               {footerLinks.quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={`/${link.href}`}
                     className="text-primary-foreground/70 hover:text-gold transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -140,10 +141,11 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
           <p className="text-primary-foreground/50 text-sm text-center md:text-right">
             © {new Date().getFullYear()} יוסי אוזן - שמאי מקרקעין. כל הזכויות שמורות.
           </p>
-          <div className="flex gap-6 text-sm text-primary-foreground/50">
-            <a href="#" className="hover:text-gold transition-colors">תנאי שימוש</a>
-            <a href="#" className="hover:text-gold transition-colors">מדיניות פרטיות</a>
-            <a href="#" className="hover:text-gold transition-colors">נגישות</a>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-primary-foreground/70">
+            <Link to="/regulations" className="hover:text-gold transition-colors">תקנון</Link>
+            <Link to="/privacy-policy" className="hover:text-gold transition-colors">מדיניות פרטיות</Link>
+            <Link to="/accessibility" className="hover:text-gold transition-colors">הצהרת נגישות</Link>
+            <button type="button" onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))} className="hover:text-gold transition-colors">הגדרות עוגיות</button>
           </div>
         </div>
       </div>

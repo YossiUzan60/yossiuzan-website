@@ -1,11 +1,11 @@
 import { useState, forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 
 const contactInfo = [
   {
@@ -43,17 +43,27 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!acceptedTerms) {
+      toast({ title: 'יש לאשר את התקנון ומדיניות הפרטיות לפני שליחה.', variant: 'destructive' });
+      return;
+    }
+    if (isSubmitting) return;
     setIsSubmitting(true);
     
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData,
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, acceptedTerms }),
+        signal: AbortSignal.timeout(20_000),
       });
-
-      if (error) throw error;
+      if (!response.ok) throw new Error('Email delivery failed');
+      const data = await response.json();
+      if (data?.success !== true) throw new Error('Email delivery was not confirmed');
 
       toast({
         title: 'הודעה נשלחה בהצלחה!',
@@ -61,6 +71,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
       });
       
       setFormData({ name: '', phone: '', email: '', message: '' });
+      setAcceptedTerms(false);
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
@@ -120,6 +131,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                     </label>
                     <Input
                       id="contact-name"
+                      maxLength={100}
                       type="text"
                       placeholder="הזן את שמך"
                       value={formData.name}
@@ -134,6 +146,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                     </label>
                     <Input
                       id="contact-phone"
+                      maxLength={32}
                       type="tel"
                       placeholder="050-0000000"
                       value={formData.phone}
@@ -150,6 +163,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                   </label>
                   <Input
                     id="contact-email"
+                    maxLength={254}
                     type="email"
                     placeholder="your@email.com"
                     value={formData.email}
@@ -165,6 +179,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                   </label>
                   <Textarea
                     id="contact-message"
+                    maxLength={4000}
                     placeholder="ספרו לנו במה נוכל לעזור..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -174,6 +189,27 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                   />
                 </div>
                 
+                <div className="rounded-xl border border-border bg-muted/50 p-4 text-sm leading-6">
+                  <h4 className="mb-1 font-semibold text-foreground">הגנה על פרטיות</h4>
+                  <p className="text-muted-foreground">המידע שלכם מוגן בהצפנה ומועבר בצורה מאובטחת. אנו פועלים בהתאם לחוק הגנת הפרטיות הישראלי ותקנות GDPR. המידע ישמש אך ורק למתן מענה לפנייתכם ולא יועבר לצדדים שלישיים.</p>
+                </div>
+
+                <label className="flex min-h-11 items-start gap-3 text-sm leading-6 text-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="acceptedTerms"
+                    required
+                    checked={acceptedTerms}
+                    onChange={(e) => setAcceptedTerms(e.target.checked)}
+                    className="mt-1 h-5 w-5 shrink-0 accent-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  />
+                  <span>
+                    קראתי ואני מסכים/ה ל<Link to="/regulations" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-gold-dark">תקנון</Link>
+                    {' '}ול<Link to="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-gold-dark">מדיניות הפרטיות</Link>.
+                    <span className="block text-xs text-muted-foreground">הקישורים נפתחים בלשונית חדשה.</span>
+                  </span>
+                </label>
+
                 <Button 
                   type="submit" 
                   variant="gold" 

@@ -33,7 +33,7 @@ const Publications = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="bg-navy-dark text-white py-24">
+      <main id="main-content" tabIndex={-1} className="bg-navy-dark text-white py-24">
       <div className="container mx-auto px-4">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

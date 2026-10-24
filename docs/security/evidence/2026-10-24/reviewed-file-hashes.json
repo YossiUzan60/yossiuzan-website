@@ -1,0 +1,9 @@
+{
+  "package.json": "676ee4ab21cc44a5101c21a1590fe2e491a09865436491ff9e46e40ba413b60c",
+  "package-lock.json": "a2b9e4651fe3bbda1a306d4dec87d0de53df825a9e2d344f253f71cd4c4d93dc",
+  "supabase/functions/send-contact-email/handler.ts": "3e61073a68105a5f45d07036f951cbe8a793df13561f24aca98b8e76e02a4c1a",
+  "supabase/functions/send-contact-email/index.ts": "284c18cf1454a5a59cd7bb69abd0ae96cd86292e23928ab1a003c4652a396b86",
+  "src/components/Contact.tsx": "8237215b02d67d95b1e2a712c587812af6be3a1afcf0f01edf99a2cfd75d9956",
+  "src/test/ContactSecurity.test.ts": "8d7d7eb9c8a34f5e1536af521aa6120d4b4934ce2529c9cfa270f76fa76af6ca",
+  "src/test/Contact.test.tsx": "caa1038cec549d8ec88cb208dddeb4e45bb64f73e43106fa40b843a90d7a41c8"
+}

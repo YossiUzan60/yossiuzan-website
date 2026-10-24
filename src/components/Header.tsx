@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
-  { href: '#home', label: 'ראשי' },
-  { href: '#services', label: 'תחומי עיסוק' },
-  { href: '#about', label: 'אודות' },
-  { href: '#team', label: 'הצוות' },
-  { href: '#faq', label: 'שאלות נפוצות' },
-  { href: '#testimonials', label: 'המלצות' },
+  { href: '/#home', label: 'ראשי' },
+  { href: '/#services', label: 'תחומי עיסוק' },
+  { href: '/#about', label: 'אודות' },
+  { href: '/#team', label: 'הצוות' },
+  { href: '/#faq', label: 'שאלות נפוצות' },
+  { href: '/#testimonials', label: 'המלצות' },
   { href: '/publications', label: 'פרסומים' },
-  { href: '#contact', label: 'צור קשר' },
+  { href: '/#contact', label: 'צור קשר' },
 ];
 
 export const Header = () => {
@@ -79,41 +80,43 @@ export const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center group">
+            <Link to="/#home" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center group">
               <img 
                 src={logo} 
                 alt="יוסי אוזן - שמאי מקרקעין" 
                 className="h-10 sm:h-12 w-auto"
               />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gold/10 hover:text-gold ${
                     isScrolled ? 'text-foreground' : 'text-navy-dark'
                   }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
               <Button variant="gold" size="lg" asChild>
-                <a href="#contact">קבע פגישה</a>
+                <Link to="/#contact">קבע פגישה</Link>
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               className="lg:hidden p-2 rounded-lg hover:bg-gold/10 transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? (
                 <X className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-navy-dark'}`} />
@@ -128,26 +131,27 @@ export const Header = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-navigation"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-card border-t border-border overflow-hidden"
+              className="absolute inset-x-0 top-full max-h-[calc(100dvh-7rem)] overflow-y-auto lg:hidden bg-card border-t border-border shadow-lg"
             >
               <nav className="container mx-auto px-4 py-6 flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     className="px-4 py-3 rounded-lg font-medium text-foreground hover:bg-gold/10 hover:text-gold transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
                 <div className="pt-4 border-t border-border mt-4">
                   <Button variant="gold" size="lg" className="w-full" asChild>
-                    <a href="#contact">קבע פגישה</a>
+                    <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>קבע פגישה</Link>
                   </Button>
                 </div>
               </nav>
