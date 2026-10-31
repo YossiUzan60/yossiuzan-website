@@ -25,14 +25,15 @@ const team = [
     photoPosition: 'center 25%',
   },
   {
-    name: 'תובל גואטה',
+    name: 'תובל גויטע',
     role: 'שמאי מקרקעין',
-    description: 'בעל תואר ראשון ושני בכלכלה, מימון ומערכות מידע, ובוגר התוכנית לשמאות מקרקעין בטכניון חיפה. הגיע לשמאות אחרי מעל 15 שנה בתפקידי ניהול בכירים בהייטק, ומביא עמו רקע כלכלי וניהולי נרחב.',
-    credentials: ['B.A ו-M.A כלכלה ומימון', 'בוגר התוכנית לשמאות בטכניון', '15+ שנה בהייטק'],
+    description: 'בעל תואר ראשון (B.Sc) בכלכלה ומערכות מידע (מדעי הנתונים), תואר שני (MBA), ובוגר התוכנית לשמאות מקרקעין בטכניון. משלב רקע כלכלי, ניהולי ואנליטי רחב לצד למעלה מ-15 שנות ניסיון בתפקידי ניהול בכירים בעולם הנתונים וההייטק.',
+    credentials: ['B.Sc בכלכלה ומערכות מידע', 'M.B.A', 'בוגר שמאות טכניון', '15+ שנות ניסיון בהייטק ובעולם הנתונים'],
     initials: 'ת.ג',
     photo: tuvalGuetaPhoto,
     showFullPortrait: true,
     email: 'tuval.g@gmail.com',
+    website: 'https://tuvalgueta.com',
   },
   {
     name: 'שני בוחבוט',
@@ -129,6 +130,17 @@ export const Team = () => {
                       </span>
                     ))}
                   </div>
+                  {member.website && (
+                    <a
+                      href={member.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex min-h-11 items-center text-sm font-medium text-foreground underline underline-offset-4 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                      aria-label={`האתר של ${member.name} (נפתח בלשונית חדשה)`}
+                    >
+                      <bdi>tuvalgueta.com</bdi>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
